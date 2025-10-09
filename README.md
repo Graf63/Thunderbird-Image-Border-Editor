@@ -116,7 +116,7 @@ Créé avec ❤️ pour la communauté Thunderbird
 
 ## 📊 Changelog
 
-### Version 1.0.0 (2025-01-XX)
+### Version 1.0.0 (2025-10-09)
 - 🎉 Version initiale
 - ✨ 8 styles de bordures prédéfinis
 - ⚙️ Page de configuration complète
