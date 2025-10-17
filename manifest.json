@@ -6,10 +6,11 @@
       "strict_min_version": "91.0"
     }
   },
-  "name": "Image Border Editor",
-  "version": "1.0.0",
-  "description": "Ajoutez facilement des bordures personnalisées aux images dans vos emails",
+  "name": "__MSG_extensionName__",
+  "version": "1.1.0",
+  "description": "__MSG_extensionDescription__",
   "author": "Grafics",
+  "default_locale": "en",
   "permissions": [
     "menus",
     "storage",
@@ -27,7 +28,7 @@
       "48": "icon-48.png",
       "96": "icon-96.png"
     },
-    "default_title": "Image Border Editor"
+    "default_title": "__MSG_extensionName__"
   },
   "options_ui": {
     "page": "options.html",
