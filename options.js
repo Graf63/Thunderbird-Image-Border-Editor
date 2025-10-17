@@ -1,47 +1,71 @@
-const defaultBorderStyles = {
-  simple: {
-    name: "Bordure simple",
-    style: "1px solid #000000"
-  },
-  thick: {
-    name: "Bordure épaisse",
-    style: "4px solid #000000"
-  },
-  thin: {
-    name: "Bordure fine",
-    style: "1px solid #cccccc"
-  },
-  double: {
-    name: "Double bordure",
-    style: "3px double #000000"
-  },
-  dashed: {
-    name: "Bordure pointillée",
-    style: "2px dashed #000000"
-  },
-  colored: {
-    name: "Bordure colorée",
-    style: "3px solid #ff6b6b"
-  },
-  rounded: {
-    name: "Bordure arrondie",
-    style: "2px solid #000000",
-    borderRadius: "8px"
-  },
-  shadow: {
-    name: "Avec ombre",
-    style: "2px solid #000000",
-    boxShadow: "3px 3px 8px rgba(0,0,0,0.3)"
-  }
-};
+// Fonction pour obtenir les styles par défaut avec i18n
+function getDefaultBorderStyles() {
+  return {
+    simple: {
+      name: browser.i18n.getMessage("borderSimple"),
+      style: "1px solid #000000"
+    },
+    thick: {
+      name: browser.i18n.getMessage("borderThick"),
+      style: "4px solid #000000"
+    },
+    thin: {
+      name: browser.i18n.getMessage("borderThin"),
+      style: "1px solid #cccccc"
+    },
+    double: {
+      name: browser.i18n.getMessage("borderDouble"),
+      style: "3px double #000000"
+    },
+    dashed: {
+      name: browser.i18n.getMessage("borderDashed"),
+      style: "2px dashed #000000"
+    },
+    colored: {
+      name: browser.i18n.getMessage("borderColored"),
+      style: "3px solid #ff6b6b"
+    },
+    rounded: {
+      name: browser.i18n.getMessage("borderRounded"),
+      style: "2px solid #000000",
+      borderRadius: "8px"
+    },
+    shadow: {
+      name: browser.i18n.getMessage("borderShadow"),
+      style: "2px solid #000000",
+      boxShadow: "3px 3px 8px rgba(0,0,0,0.3)"
+    }
+  };
+}
 
 let currentStyles = {};
 
 // Charger les styles sauvegardés
 async function loadStyles() {
   const result = await browser.storage.local.get("borderStyles");
-  currentStyles = result.borderStyles || { ...defaultBorderStyles };
+  const defaultStyles = getDefaultBorderStyles();
+  
+  if (result.borderStyles) {
+    // Fusionner avec les traductions actuelles
+    currentStyles = mergeStylesWithTranslations(result.borderStyles, defaultStyles);
+  } else {
+    currentStyles = { ...defaultStyles };
+  }
   renderStyles();
+}
+
+// Fusionner les styles sauvegardés avec les nouvelles traductions
+function mergeStylesWithTranslations(savedStyles, defaultStyles) {
+  const merged = { ...savedStyles };
+  
+  // Mettre à jour les noms des styles par défaut
+  for (const [key, defaultStyle] of Object.entries(defaultStyles)) {
+    if (merged[key] && merged[key].style === defaultStyle.style) {
+      merged[key].name = defaultStyle.name;
+    }
+  }
+  
+  return merged;
 }
 
 // Afficher les styles
@@ -74,7 +98,7 @@ function createStyleElement(key, style) {
   
   const deleteBtn = document.createElement("button");
   deleteBtn.className = "btn-delete";
-  deleteBtn.textContent = "🗑️ Supprimer";
+  deleteBtn.textContent = browser.i18n.getMessage("btnDelete");
   deleteBtn.onclick = () => deleteStyle(key);
   
   styleHeader.appendChild(styleName);
@@ -84,20 +108,20 @@ function createStyleElement(key, style) {
   const styleFields = document.createElement("div");
   styleFields.className = "style-fields";
   
-  // Créer chaque champ de manière sécurisée
-  const fieldNameDiv = createField("full-width", "Nom du style", 
+  // Créer chaque champ de manière sécurisée avec i18n
+  const fieldNameDiv = createField("full-width", browser.i18n.getMessage("fieldStyleName"), 
     createInput("text", "style-name-input", escapeHtml(style.name)));
   
-  const fieldWidthDiv = createField("", "Épaisseur (px)", 
+  const fieldWidthDiv = createField("", browser.i18n.getMessage("fieldBorderWidth"), 
     createNumberInput("border-width", parsed.width, 1, 20));
   
-  const fieldTypeDiv = createField("", "Type de bordure", 
+  const fieldTypeDiv = createField("", browser.i18n.getMessage("fieldBorderType"), 
     createBorderTypeSelect("border-type", parsed.type));
   
-  const fieldColorDiv = createField("", "Couleur", 
+  const fieldColorDiv = createField("", browser.i18n.getMessage("fieldBorderColor"), 
     createColorInput("border-color", parsed.color));
   
-  const fieldColorTextDiv = createField("", "Code couleur", 
+  const fieldColorTextDiv = createField("", browser.i18n.getMessage("fieldColorCode"), 
     createInput("text", "border-color-text", escapeHtml(parsed.color)));
   
   styleFields.appendChild(fieldNameDiv);
@@ -108,7 +132,7 @@ function createStyleElement(key, style) {
   
   const toggleLink = document.createElement("a");
   toggleLink.className = "toggle-advanced";
-  toggleLink.textContent = "Options avancées ▼";
+  toggleLink.textContent = browser.i18n.getMessage("toggleAdvanced") + " ▼";
   toggleLink.onclick = function() { toggleAdvanced(this); };
   
   const advancedOptions = document.createElement("div");
@@ -118,10 +142,10 @@ function createStyleElement(key, style) {
   const advancedFields = document.createElement("div");
   advancedFields.className = "style-fields";
   
-  const fieldRadiusDiv = createField("", "Rayon des coins (ex: 8px)", 
+  const fieldRadiusDiv = createField("", browser.i18n.getMessage("fieldBorderRadius"), 
     createInput("text", "border-radius", escapeHtml(style.borderRadius || '')));
   
-  const fieldShadowDiv = createField("", "Ombre (ex: 3px 3px 8px rgba(0,0,0,0.3))", 
+  const fieldShadowDiv = createField("", browser.i18n.getMessage("fieldBoxShadow"), 
     createInput("text", "border-shadow", escapeHtml(style.boxShadow || '')));
   
   advancedFields.appendChild(fieldRadiusDiv);
@@ -209,20 +233,20 @@ function createBorderTypeSelect(className, selectedValue) {
   select.className = className;
   
   const options = [
-    { value: "solid", label: "Solide" },
-    { value: "dashed", label: "Pointillée" },
-    { value: "dotted", label: "Points" },
-    { value: "double", label: "Double" },
-    { value: "groove", label: "Rainure" },
-    { value: "ridge", label: "Crête" },
-    { value: "inset", label: "Inset" },
-    { value: "outset", label: "Outset" }
+    { value: "solid", messageKey: "borderTypeSolid" },
+    { value: "dashed", messageKey: "borderTypeDashed" },
+    { value: "dotted", messageKey: "borderTypeDotted" },
+    { value: "double", messageKey: "borderTypeDouble" },
+    { value: "groove", messageKey: "borderTypeGroove" },
+    { value: "ridge", messageKey: "borderTypeRidge" },
+    { value: "inset", messageKey: "borderTypeInset" },
+    { value: "outset", messageKey: "borderTypeOutset" }
   ];
   
   options.forEach(opt => {
     const option = document.createElement("option");
     option.value = opt.value;
-    option.textContent = opt.label;
+    option.textContent = browser.i18n.getMessage(opt.messageKey);
     if (opt.value === selectedValue) {
       option.selected = true;
     }
@@ -235,12 +259,14 @@ function createBorderTypeSelect(className, selectedValue) {
 // Basculer les options avancées
 function toggleAdvanced(element) {
   const advanced = element.nextElementSibling;
+  const baseText = browser.i18n.getMessage("toggleAdvanced");
+  
   if (advanced.style.display === "none") {
     advanced.style.display = "block";
-    element.textContent = "Options avancées ▲";
+    element.textContent = baseText + " ▲";
   } else {
     advanced.style.display = "none";
-    element.textContent = "Options avancées ▼";
+    element.textContent = baseText + " ▼";
   }
 }
 
@@ -305,14 +331,14 @@ async function saveStyles() {
   const styles = collectStyles();
   await browser.storage.local.set({ borderStyles: styles });
   currentStyles = styles;
-  showMessage("✅ Styles sauvegardés avec succès !", "success");
+  showMessage(browser.i18n.getMessage("messageStylesSaved"), "success");
 }
 
 // Ajouter un nouveau style
 function addNewStyle() {
   const key = `custom_${Date.now()}`;
   currentStyles[key] = {
-    name: "Nouveau style",
+    name: browser.i18n.getMessage("newStyleName"),
     style: "2px solid #000000"
   };
   renderStyles();
@@ -324,7 +350,7 @@ function addNewStyle() {
 
 // Supprimer un style
 function deleteStyle(key) {
-  if (confirm("Êtes-vous sûr de vouloir supprimer ce style ?")) {
+  if (confirm(browser.i18n.getMessage("confirmDelete"))) {
     delete currentStyles[key];
     renderStyles();
   }
@@ -332,11 +358,11 @@ function deleteStyle(key) {
 
 // Réinitialiser aux valeurs par défaut
 async function resetToDefaults() {
-  if (confirm("Êtes-vous sûr de vouloir réinitialiser tous les styles aux valeurs par défaut ? Tous vos styles personnalisés seront perdus.")) {
-    currentStyles = { ...defaultBorderStyles };
+  if (confirm(browser.i18n.getMessage("confirmReset"))) {
+    currentStyles = { ...getDefaultBorderStyles() };
     await browser.storage.local.set({ borderStyles: currentStyles });
     renderStyles();
-    showMessage("🔄 Styles réinitialisés aux valeurs par défaut", "success");
+    showMessage(browser.i18n.getMessage("messageStylesReset"), "success");
   }
 }
 
@@ -352,6 +378,19 @@ function showMessage(text, type) {
   }, 3000);
 }
 
+// Initialiser la page avec les traductions
+function initializePage() {
+  // Mettre à jour le titre et sous-titre
+  document.title = browser.i18n.getMessage("optionsTitle");
+  document.querySelector("h1").textContent = "⚙️ " + browser.i18n.getMessage("optionsTitle");
+  document.querySelector(".subtitle").textContent = browser.i18n.getMessage("optionsSubtitle");
+  
+  // Mettre à jour les boutons
+  document.getElementById("save-btn").textContent = browser.i18n.getMessage("btnSave");
+  document.getElementById("add-style-btn").textContent = browser.i18n.getMessage("btnAddStyle");
+  document.getElementById("reset-btn").textContent = browser.i18n.getMessage("btnReset");
+}
+
 // Écouteurs d'événements
 document.getElementById("save-btn").addEventListener("click", saveStyles);
 document.getElementById("add-style-btn").addEventListener("click", addNewStyle);
@@ -361,5 +400,8 @@ document.getElementById("reset-btn").addEventListener("click", resetToDefaults);
 window.toggleAdvanced = toggleAdvanced;
 window.deleteStyle = deleteStyle;
 
-// Charger les styles au démarrage
-loadStyles();
+// Initialiser la page et charger les styles au démarrage
+document.addEventListener("DOMContentLoaded", () => {
+  initializePage();
+  loadStyles();
+});
