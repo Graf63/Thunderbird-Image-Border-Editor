@@ -1,6 +1,6 @@
 # 🖼️ Image Border Editor - Extension Thunderbird
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MPL--2.0-green.svg)
 ![Thunderbird](https://img.shields.io/badge/Thunderbird-91%2B-orange.svg)
 
@@ -116,6 +116,9 @@ Créé avec ❤️ pour la communauté Thunderbird
 
 ## 📊 Changelog
 
+### Version 1.1.0 (2025-10-17)
+- Multilangue
+  
 ### Version 1.0.0 (2025-10-09)
 - 🎉 Version initiale
 - ✨ 8 styles de bordures prédéfinis
