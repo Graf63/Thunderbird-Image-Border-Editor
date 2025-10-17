@@ -1,51 +1,69 @@
-// Styles de bordures par défaut
-const defaultBorderStyles = {
-  simple: {
-    name: "Bordure simple",
-    style: "1px solid #000000"
-  },
-  thick: {
-    name: "Bordure épaisse",
-    style: "4px solid #000000"
-  },
-  thin: {
-    name: "Bordure fine",
-    style: "1px solid #cccccc"
-  },
-  double: {
-    name: "Double bordure",
-    style: "3px double #000000"
-  },
-  dashed: {
-    name: "Bordure pointillée",
-    style: "2px dashed #000000"
-  },
-  colored: {
-    name: "Bordure colorée",
-    style: "3px solid #ff6b6b"
-  },
-  rounded: {
-    name: "Bordure arrondie",
-    style: "2px solid #000000",
-    borderRadius: "8px"
-  },
-  shadow: {
-    name: "Avec ombre",
-    style: "2px solid #000000",
-    boxShadow: "3px 3px 8px rgba(0,0,0,0.3)"
-  }
-};
+// Styles de bordures par défaut avec support i18n
+function getDefaultBorderStyles() {
+  return {
+    simple: {
+      name: browser.i18n.getMessage("borderSimple"),
+      style: "1px solid #000000"
+    },
+    thick: {
+      name: browser.i18n.getMessage("borderThick"),
+      style: "4px solid #000000"
+    },
+    thin: {
+      name: browser.i18n.getMessage("borderThin"),
+      style: "1px solid #cccccc"
+    },
+    double: {
+      name: browser.i18n.getMessage("borderDouble"),
+      style: "3px double #000000"
+    },
+    dashed: {
+      name: browser.i18n.getMessage("borderDashed"),
+      style: "2px dashed #000000"
+    },
+    colored: {
+      name: browser.i18n.getMessage("borderColored"),
+      style: "3px solid #ff6b6b"
+    },
+    rounded: {
+      name: browser.i18n.getMessage("borderRounded"),
+      style: "2px solid #000000",
+      borderRadius: "8px"
+    },
+    shadow: {
+      name: browser.i18n.getMessage("borderShadow"),
+      style: "2px solid #000000",
+      boxShadow: "3px 3px 8px rgba(0,0,0,0.3)"
+    }
+  };
+}
 
-let borderStyles = { ...defaultBorderStyles };
+let borderStyles = getDefaultBorderStyles();
 let lastClickedImageSrc = null;
 
 // Charger les styles personnalisés au démarrage
 browser.storage.local.get("borderStyles").then((result) => {
   if (result.borderStyles) {
-    borderStyles = result.borderStyles;
+    // Fusionner les styles sauvegardés avec les traductions actuelles
+    borderStyles = mergeStylesWithTranslations(result.borderStyles);
   }
   createContextMenus();
 });
+
+// Fonction pour fusionner les styles sauvegardés avec les nouvelles traductions
+function mergeStylesWithTranslations(savedStyles) {
+  const defaultStyles = getDefaultBorderStyles();
+  const merged = { ...savedStyles };
+  
+  // Mettre à jour les noms des styles par défaut avec les traductions actuelles
+  for (const [key, defaultStyle] of Object.entries(defaultStyles)) {
+    if (merged[key] && merged[key].style === defaultStyle.style) {
+      merged[key].name = defaultStyle.name;
+    }
+  }
+  
+  return merged;
+}
 
 // Créer les menus contextuels
 function createContextMenus() {
@@ -55,7 +73,7 @@ function createContextMenus() {
   // Créer le menu parent
   browser.menus.create({
     id: "image-border-parent",
-    title: "Ajouter une bordure",
+    title: browser.i18n.getMessage("menuAddBorder"),
     contexts: ["image"]
   });
   
@@ -81,7 +99,7 @@ function createContextMenus() {
   browser.menus.create({
     id: "border-remove",
     parentId: "image-border-parent",
-    title: "Retirer la bordure",
+    title: browser.i18n.getMessage("menuRemoveBorder"),
     contexts: ["image"]
   });
   
@@ -89,7 +107,7 @@ function createContextMenus() {
   browser.menus.create({
     id: "border-settings",
     parentId: "image-border-parent",
-    title: "⚙️ Paramètres",
+    title: browser.i18n.getMessage("menuSettings"),
     contexts: ["image"]
   });
 }
@@ -185,10 +203,20 @@ async function applyBorderToImage(tabId, style) {
   }
 }
 
-// Écouter les changements de styles
+// Écouter les changements de styles et regénérer les menus
 browser.storage.onChanged.addListener((changes, area) => {
   if (area === "local" && changes.borderStyles) {
-    borderStyles = changes.borderStyles.newValue;
+    borderStyles = mergeStylesWithTranslations(changes.borderStyles.newValue);
     createContextMenus();
   }
 });
+
+// Fonction pour exposer les styles par défaut aux autres scripts
+async function getDefaultStylesForOptions() {
+  return getDefaultBorderStyles();
+}
+
+// Exposer la fonction pour la page d'options
+if (typeof window !== 'undefined') {
+  window.getDefaultBorderStyles = getDefaultBorderStyles;
+}
