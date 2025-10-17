@@ -1,0 +1,171 @@
+{
+  "extensionName": {
+    "message": "Image Border Editor",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Easily add custom borders to images in your emails",
+    "description": "Extension description"
+  },
+  
+  "menuAddBorder": {
+    "message": "Add border",
+    "description": "Main context menu title"
+  },
+  "menuRemoveBorder": {
+    "message": "Remove border",
+    "description": "Option to remove border"
+  },
+  "menuSettings": {
+    "message": "⚙️ Settings",
+    "description": "Option to open settings"
+  },
+  
+  "borderSimple": {
+    "message": "Simple border",
+    "description": "Simple border style"
+  },
+  "borderThick": {
+    "message": "Thick border",
+    "description": "Thick border style"
+  },
+  "borderThin": {
+    "message": "Thin border",
+    "description": "Thin border style"
+  },
+  "borderDouble": {
+    "message": "Double border",
+    "description": "Double border style"
+  },
+  "borderDashed": {
+    "message": "Dashed border",
+    "description": "Dashed border style"
+  },
+  "borderColored": {
+    "message": "Colored border",
+    "description": "Colored border style"
+  },
+  "borderRounded": {
+    "message": "Rounded border",
+    "description": "Rounded border style"
+  },
+  "borderShadow": {
+    "message": "With shadow",
+    "description": "Border with shadow style"
+  },
+  
+  "optionsTitle": {
+    "message": "Image Border Configuration",
+    "description": "Options page title"
+  },
+  "optionsSubtitle": {
+    "message": "Customize your border styles for images in your emails",
+    "description": "Options page subtitle"
+  },
+  
+  "fieldStyleName": {
+    "message": "Style name",
+    "description": "Label for style name"
+  },
+  "fieldBorderWidth": {
+    "message": "Width (px)",
+    "description": "Label for border width"
+  },
+  "fieldBorderType": {
+    "message": "Border type",
+    "description": "Label for border type"
+  },
+  "fieldBorderColor": {
+    "message": "Color",
+    "description": "Label for color"
+  },
+  "fieldColorCode": {
+    "message": "Color code",
+    "description": "Label for color code"
+  },
+  "fieldBorderRadius": {
+    "message": "Corner radius (e.g.: 8px)",
+    "description": "Label for border radius"
+  },
+  "fieldBoxShadow": {
+    "message": "Shadow (e.g.: 3px 3px 8px rgba(0,0,0,0.3))",
+    "description": "Label for box shadow"
+  },
+  
+  "borderTypeSolid": {
+    "message": "Solid",
+    "description": "Solid border type"
+  },
+  "borderTypeDashed": {
+    "message": "Dashed",
+    "description": "Dashed border type"
+  },
+  "borderTypeDotted": {
+    "message": "Dotted",
+    "description": "Dotted border type"
+  },
+  "borderTypeDouble": {
+    "message": "Double",
+    "description": "Double border type"
+  },
+  "borderTypeGroove": {
+    "message": "Groove",
+    "description": "Groove border type"
+  },
+  "borderTypeRidge": {
+    "message": "Ridge",
+    "description": "Ridge border type"
+  },
+  "borderTypeInset": {
+    "message": "Inset",
+    "description": "Inset border type"
+  },
+  "borderTypeOutset": {
+    "message": "Outset",
+    "description": "Outset border type"
+  },
+  
+  "toggleAdvanced": {
+    "message": "Advanced options",
+    "description": "Text to toggle advanced options"
+  },
+  "newStyleName": {
+    "message": "New style",
+    "description": "Default name for new style"
+  },
+  
+  "btnSave": {
+    "message": "💾 Save",
+    "description": "Save button"
+  },
+  "btnAddStyle": {
+    "message": "➕ Add style",
+    "description": "Add style button"
+  },
+  "btnReset": {
+    "message": "🔄 Reset to default",
+    "description": "Reset button"
+  },
+  "btnDelete": {
+    "message": "🗑️ Delete",
+    "description": "Delete button"
+  },
+  
+  "confirmDelete": {
+    "message": "Are you sure you want to delete this style?",
+    "description": "Delete confirmation"
+  },
+  "confirmReset": {
+    "message": "Are you sure you want to reset all styles to default values? All your custom styles will be lost.",
+    "description": "Reset confirmation"
+  },
+  
+  "messageStylesSaved": {
+    "message": "✅ Styles saved successfully!",
+    "description": "Save confirmation message"
+  },
+  "messageStylesReset": {
+    "message": "🔄 Styles reset to default values",
+    "description": "Reset confirmation message"
+  }
+}

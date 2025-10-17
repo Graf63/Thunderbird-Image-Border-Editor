@@ -1,0 +1,171 @@
+{
+  "extensionName": {
+    "message": "Editor de Bordes de Imagen",
+    "description": "Nombre de la extensión"
+  },
+  "extensionDescription": {
+    "message": "Añade fácilmente bordes personalizados a las imágenes en tus correos electrónicos",
+    "description": "Descripción de la extensión"
+  },
+  
+  "menuAddBorder": {
+    "message": "Añadir borde",
+    "description": "Título del menú contextual principal"
+  },
+  "menuRemoveBorder": {
+    "message": "Quitar borde",
+    "description": "Opción para quitar el borde"
+  },
+  "menuSettings": {
+    "message": "⚙️ Configuración",
+    "description": "Opción para abrir la configuración"
+  },
+  
+  "borderSimple": {
+    "message": "Borde simple",
+    "description": "Estilo de borde simple"
+  },
+  "borderThick": {
+    "message": "Borde grueso",
+    "description": "Estilo de borde grueso"
+  },
+  "borderThin": {
+    "message": "Borde fino",
+    "description": "Estilo de borde fino"
+  },
+  "borderDouble": {
+    "message": "Borde doble",
+    "description": "Estilo de borde doble"
+  },
+  "borderDashed": {
+    "message": "Borde discontinuo",
+    "description": "Estilo de borde discontinuo"
+  },
+  "borderColored": {
+    "message": "Borde colorido",
+    "description": "Estilo de borde colorido"
+  },
+  "borderRounded": {
+    "message": "Borde redondeado",
+    "description": "Estilo de borde redondeado"
+  },
+  "borderShadow": {
+    "message": "Con sombra",
+    "description": "Estilo de borde con sombra"
+  },
+  
+  "optionsTitle": {
+    "message": "Configuración de Bordes de Imagen",
+    "description": "Título de la página de opciones"
+  },
+  "optionsSubtitle": {
+    "message": "Personaliza tus estilos de borde para las imágenes en tus correos electrónicos",
+    "description": "Subtítulo de la página de opciones"
+  },
+  
+  "fieldStyleName": {
+    "message": "Nombre del estilo",
+    "description": "Etiqueta para el nombre del estilo"
+  },
+  "fieldBorderWidth": {
+    "message": "Grosor (px)",
+    "description": "Etiqueta para el grosor del borde"
+  },
+  "fieldBorderType": {
+    "message": "Tipo de borde",
+    "description": "Etiqueta para el tipo de borde"
+  },
+  "fieldBorderColor": {
+    "message": "Color",
+    "description": "Etiqueta para el color"
+  },
+  "fieldColorCode": {
+    "message": "Código de color",
+    "description": "Etiqueta para el código de color"
+  },
+  "fieldBorderRadius": {
+    "message": "Radio de las esquinas (ej: 8px)",
+    "description": "Etiqueta para el radio del borde"
+  },
+  "fieldBoxShadow": {
+    "message": "Sombra (ej: 3px 3px 8px rgba(0,0,0,0.3))",
+    "description": "Etiqueta para la sombra de caja"
+  },
+  
+  "borderTypeSolid": {
+    "message": "Sólido",
+    "description": "Tipo de borde sólido"
+  },
+  "borderTypeDashed": {
+    "message": "Discontinuo",
+    "description": "Tipo de borde discontinuo"
+  },
+  "borderTypeDotted": {
+    "message": "Punteado",
+    "description": "Tipo de borde punteado"
+  },
+  "borderTypeDouble": {
+    "message": "Doble",
+    "description": "Tipo de borde doble"
+  },
+  "borderTypeGroove": {
+    "message": "Ranura",
+    "description": "Tipo de borde ranura"
+  },
+  "borderTypeRidge": {
+    "message": "Cresta",
+    "description": "Tipo de borde cresta"
+  },
+  "borderTypeInset": {
+    "message": "Hundido",
+    "description": "Tipo de borde hundido"
+  },
+  "borderTypeOutset": {
+    "message": "Elevado",
+    "description": "Tipo de borde elevado"
+  },
+  
+  "toggleAdvanced": {
+    "message": "Opciones avanzadas",
+    "description": "Texto para alternar opciones avanzadas"
+  },
+  "newStyleName": {
+    "message": "Nuevo estilo",
+    "description": "Nombre por defecto para un nuevo estilo"
+  },
+  
+  "btnSave": {
+    "message": "💾 Guardar",
+    "description": "Botón guardar"
+  },
+  "btnAddStyle": {
+    "message": "➕ Añadir estilo",
+    "description": "Botón añadir estilo"
+  },
+  "btnReset": {
+    "message": "🔄 Restablecer por defecto",
+    "description": "Botón restablecer"
+  },
+  "btnDelete": {
+    "message": "🗑️ Eliminar",
+    "description": "Botón eliminar"
+  },
+  
+  "confirmDelete": {
+    "message": "¿Estás seguro de que quieres eliminar este estilo?",
+    "description": "Confirmación de eliminación"
+  },
+  "confirmReset": {
+    "message": "¿Estás seguro de que quieres restablecer todos los estilos a los valores por defecto? Se perderán todos tus estilos personalizados.",
+    "description": "Confirmación de restablecimiento"
+  },
+  
+  "messageStylesSaved": {
+    "message": "✅ ¡Estilos guardados correctamente!",
+    "description": "Mensaje de confirmación de guardado"
+  },
+  "messageStylesReset": {
+    "message": "🔄 Estilos restablecidos a los valores por defecto",
+    "description": "Mensaje de confirmación de restablecimiento"
+  }
+}

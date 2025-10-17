@@ -1,0 +1,171 @@
+{
+  "extensionName": {
+    "message": "Bild-Rahmen-Editor",
+    "description": "Erweiterungsname"
+  },
+  "extensionDescription": {
+    "message": "Fügen Sie ganz einfach benutzerdefinierte Rahmen zu Bildern in Ihren E-Mails hinzu",
+    "description": "Erweiterungsbeschreibung"
+  },
+  
+  "menuAddBorder": {
+    "message": "Rahmen hinzufügen",
+    "description": "Hauptkontextmenü-Titel"
+  },
+  "menuRemoveBorder": {
+    "message": "Rahmen entfernen",
+    "description": "Option zum Entfernen des Rahmens"
+  },
+  "menuSettings": {
+    "message": "⚙️ Einstellungen",
+    "description": "Option zum Öffnen der Einstellungen"
+  },
+  
+  "borderSimple": {
+    "message": "Einfacher Rahmen",
+    "description": "Einfacher Rahmenstil"
+  },
+  "borderThick": {
+    "message": "Dicker Rahmen",
+    "description": "Dicker Rahmenstil"
+  },
+  "borderThin": {
+    "message": "Dünner Rahmen",
+    "description": "Dünner Rahmenstil"
+  },
+  "borderDouble": {
+    "message": "Doppelter Rahmen",
+    "description": "Doppelter Rahmenstil"
+  },
+  "borderDashed": {
+    "message": "Gestrichelter Rahmen",
+    "description": "Gestrichelter Rahmenstil"
+  },
+  "borderColored": {
+    "message": "Farbiger Rahmen",
+    "description": "Farbiger Rahmenstil"
+  },
+  "borderRounded": {
+    "message": "Abgerundeter Rahmen",
+    "description": "Abgerundeter Rahmenstil"
+  },
+  "borderShadow": {
+    "message": "Mit Schatten",
+    "description": "Rahmen mit Schatten"
+  },
+  
+  "optionsTitle": {
+    "message": "Bild-Rahmen-Konfiguration",
+    "description": "Titel der Optionsseite"
+  },
+  "optionsSubtitle": {
+    "message": "Passen Sie Ihre Rahmenstile für Bilder in Ihren E-Mails an",
+    "description": "Untertitel der Optionsseite"
+  },
+  
+  "fieldStyleName": {
+    "message": "Stilname",
+    "description": "Label für den Stilnamen"
+  },
+  "fieldBorderWidth": {
+    "message": "Breite (px)",
+    "description": "Label für die Rahmenbreite"
+  },
+  "fieldBorderType": {
+    "message": "Rahmentyp",
+    "description": "Label für den Rahmentyp"
+  },
+  "fieldBorderColor": {
+    "message": "Farbe",
+    "description": "Label für die Farbe"
+  },
+  "fieldColorCode": {
+    "message": "Farbcode",
+    "description": "Label für den Farbcode"
+  },
+  "fieldBorderRadius": {
+    "message": "Eckenradius (z.B.: 8px)",
+    "description": "Label für den Rahmenradius"
+  },
+  "fieldBoxShadow": {
+    "message": "Schatten (z.B.: 3px 3px 8px rgba(0,0,0,0.3))",
+    "description": "Label für den Kastenschatten"
+  },
+  
+  "borderTypeSolid": {
+    "message": "Durchgezogen",
+    "description": "Durchgezogener Rahmentyp"
+  },
+  "borderTypeDashed": {
+    "message": "Gestrichelt",
+    "description": "Gestrichelter Rahmentyp"
+  },
+  "borderTypeDotted": {
+    "message": "Gepunktet",
+    "description": "Gepunkteter Rahmentyp"
+  },
+  "borderTypeDouble": {
+    "message": "Doppelt",
+    "description": "Doppelter Rahmentyp"
+  },
+  "borderTypeGroove": {
+    "message": "Rille",
+    "description": "Rillen-Rahmentyp"
+  },
+  "borderTypeRidge": {
+    "message": "Grat",
+    "description": "Grat-Rahmentyp"
+  },
+  "borderTypeInset": {
+    "message": "Eingelassen",
+    "description": "Eingelassener Rahmentyp"
+  },
+  "borderTypeOutset": {
+    "message": "Erhaben",
+    "description": "Erhabener Rahmentyp"
+  },
+  
+  "toggleAdvanced": {
+    "message": "Erweiterte Optionen",
+    "description": "Text zum Umschalten erweiterter Optionen"
+  },
+  "newStyleName": {
+    "message": "Neuer Stil",
+    "description": "Standardname für neuen Stil"
+  },
+  
+  "btnSave": {
+    "message": "💾 Speichern",
+    "description": "Speichern-Button"
+  },
+  "btnAddStyle": {
+    "message": "➕ Stil hinzufügen",
+    "description": "Stil hinzufügen-Button"
+  },
+  "btnReset": {
+    "message": "🔄 Auf Standard zurücksetzen",
+    "description": "Zurücksetzen-Button"
+  },
+  "btnDelete": {
+    "message": "🗑️ Löschen",
+    "description": "Löschen-Button"
+  },
+  
+  "confirmDelete": {
+    "message": "Sind Sie sicher, dass Sie diesen Stil löschen möchten?",
+    "description": "Löschbestätigung"
+  },
+  "confirmReset": {
+    "message": "Sind Sie sicher, dass Sie alle Stile auf die Standardwerte zurücksetzen möchten? Alle Ihre benutzerdefinierten Stile gehen verloren.",
+    "description": "Zurücksetzungsbestätigung"
+  },
+  
+  "messageStylesSaved": {
+    "message": "✅ Stile erfolgreich gespeichert!",
+    "description": "Speichern-Bestätigungsnachricht"
+  },
+  "messageStylesReset": {
+    "message": "🔄 Stile auf Standardwerte zurückgesetzt",
+    "description": "Zurücksetzen-Bestätigungsnachricht"
+  }
+}

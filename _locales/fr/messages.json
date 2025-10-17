@@ -1,0 +1,171 @@
+{
+  "extensionName": {
+    "message": "Image Border Editor",
+    "description": "Nom de l'extension"
+  },
+  "extensionDescription": {
+    "message": "Ajoutez facilement des bordures personnalisées aux images dans vos emails",
+    "description": "Description de l'extension"
+  },
+  
+  "menuAddBorder": {
+    "message": "Ajouter une bordure",
+    "description": "Titre du menu contextuel principal"
+  },
+  "menuRemoveBorder": {
+    "message": "Retirer la bordure",
+    "description": "Option pour retirer la bordure"
+  },
+  "menuSettings": {
+    "message": "⚙️ Paramètres",
+    "description": "Option pour ouvrir les paramètres"
+  },
+  
+  "borderSimple": {
+    "message": "Bordure simple",
+    "description": "Style de bordure simple"
+  },
+  "borderThick": {
+    "message": "Bordure épaisse",
+    "description": "Style de bordure épaisse"
+  },
+  "borderThin": {
+    "message": "Bordure fine",
+    "description": "Style de bordure fine"
+  },
+  "borderDouble": {
+    "message": "Double bordure",
+    "description": "Style de double bordure"
+  },
+  "borderDashed": {
+    "message": "Bordure pointillée",
+    "description": "Style de bordure pointillée"
+  },
+  "borderColored": {
+    "message": "Bordure colorée",
+    "description": "Style de bordure colorée"
+  },
+  "borderRounded": {
+    "message": "Bordure arrondie",
+    "description": "Style de bordure arrondie"
+  },
+  "borderShadow": {
+    "message": "Avec ombre",
+    "description": "Style de bordure avec ombre"
+  },
+  
+  "optionsTitle": {
+    "message": "Configuration des bordures d'images",
+    "description": "Titre de la page d'options"
+  },
+  "optionsSubtitle": {
+    "message": "Personnalisez vos styles de bordures pour les images dans vos emails",
+    "description": "Sous-titre de la page d'options"
+  },
+  
+  "fieldStyleName": {
+    "message": "Nom du style",
+    "description": "Label pour le nom du style"
+  },
+  "fieldBorderWidth": {
+    "message": "Épaisseur (px)",
+    "description": "Label pour l'épaisseur de bordure"
+  },
+  "fieldBorderType": {
+    "message": "Type de bordure",
+    "description": "Label pour le type de bordure"
+  },
+  "fieldBorderColor": {
+    "message": "Couleur",
+    "description": "Label pour la couleur"
+  },
+  "fieldColorCode": {
+    "message": "Code couleur",
+    "description": "Label pour le code couleur"
+  },
+  "fieldBorderRadius": {
+    "message": "Rayon des coins (ex: 8px)",
+    "description": "Label pour le rayon des coins"
+  },
+  "fieldBoxShadow": {
+    "message": "Ombre (ex: 3px 3px 8px rgba(0,0,0,0.3))",
+    "description": "Label pour l'ombre"
+  },
+  
+  "borderTypeSolid": {
+    "message": "Solide",
+    "description": "Type de bordure solide"
+  },
+  "borderTypeDashed": {
+    "message": "Pointillée",
+    "description": "Type de bordure pointillée"
+  },
+  "borderTypeDotted": {
+    "message": "Points",
+    "description": "Type de bordure en points"
+  },
+  "borderTypeDouble": {
+    "message": "Double",
+    "description": "Type de bordure double"
+  },
+  "borderTypeGroove": {
+    "message": "Rainure",
+    "description": "Type de bordure rainure"
+  },
+  "borderTypeRidge": {
+    "message": "Crête",
+    "description": "Type de bordure crête"
+  },
+  "borderTypeInset": {
+    "message": "Inset",
+    "description": "Type de bordure inset"
+  },
+  "borderTypeOutset": {
+    "message": "Outset",
+    "description": "Type de bordure outset"
+  },
+  
+  "toggleAdvanced": {
+    "message": "Options avancées",
+    "description": "Texte pour basculer les options avancées"
+  },
+  "newStyleName": {
+    "message": "Nouveau style",
+    "description": "Nom par défaut pour un nouveau style"
+  },
+  
+  "btnSave": {
+    "message": "💾 Enregistrer",
+    "description": "Bouton sauvegarder"
+  },
+  "btnAddStyle": {
+    "message": "➕ Ajouter un style",
+    "description": "Bouton ajouter un style"
+  },
+  "btnReset": {
+    "message": "🔄 Réinitialiser par défaut",
+    "description": "Bouton réinitialiser"
+  },
+  "btnDelete": {
+    "message": "🗑️ Supprimer",
+    "description": "Bouton supprimer"
+  },
+  
+  "confirmDelete": {
+    "message": "Êtes-vous sûr de vouloir supprimer ce style ?",
+    "description": "Confirmation de suppression"
+  },
+  "confirmReset": {
+    "message": "Êtes-vous sûr de vouloir réinitialiser tous les styles aux valeurs par défaut ? Tous vos styles personnalisés seront perdus.",
+    "description": "Confirmation de réinitialisation"
+  },
+  
+  "messageStylesSaved": {
+    "message": "✅ Styles sauvegardés avec succès !",
+    "description": "Message de confirmation de sauvegarde"
+  },
+  "messageStylesReset": {
+    "message": "🔄 Styles réinitialisés aux valeurs par défaut",
+    "description": "Message de confirmation de réinitialisation"
+  }
+}
